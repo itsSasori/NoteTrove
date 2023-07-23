@@ -1,0 +1,54 @@
+{%include 'navbar.html'%}
+{%block content%}
+<style>
+    .containers{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+
+<div class="containers">
+  
+
+ <div class="container">
+            <!-- Topics Start -->
+
+                <div class="topics">
+            {%if request.user.is_authenticated %}
+            <h2>Hello {{request.user}}</h2>
+            {%else%}
+            {%endif%}
+           <div class="topics__header">
+            <h2>Browse Departments</h2>
+           </div>
+         
+          <ul class="topics__list">
+         
+            {%for department in departments%}
+            <li>
+            <a href="{%url 'catagories'%}">{{department.name}}<span>{{department.room_set.all.count}}</span></a>
+            </li>
+           
+            {%endfor%}
+
+          </ul>
+         
+          <a class="btn btn--link" href="topics.html">
+            More
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+              <title>chevron-down</title>
+              <path d="M16 21l-13-13h-3l16 16 16-16h-3l-13 13z"></path>
+            </svg>
+          </a>
+         </div>
+      </div>
+
+
+      <div class="container">
+        {% include 'semester.html'%}
+      </div>
+      <div>
+
+      </div>
+                {% endblock content %}
+        <!-- Topics End -->

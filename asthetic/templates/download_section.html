@@ -1,0 +1,127 @@
+{% include 'navbar.html'%}
+
+{%block content%}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Section</title>
+</head>
+<style>
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+</style>
+<link rel="stylesheet" href="{%static 'styles/download_section.css'%}">
+<body>
+    <div class="gap">
+        
+    </div>
+
+    <div class="container">
+
+       <div>
+
+       </div>
+
+          <div>
+
+    <div class="dialog-left">
+    <div id="user-menu-header"></div>
+    <div class="ebook-main" itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Book">
+    <div class="ebook-left">
+    <a href="/living-in-the-light-a-guide-to-personal-transformation-d10172273.html" rel="nofollow" onclick="c();">
+    <img class="ebook-img" itemprop="image" src="https://cdn.asaha.com/assets/thumbs/9b8/9b88b7c17f496a61fc78505130af288e.jpg" alt="Living in the Light: A guide to personal transformation" title="Living in the Light: A guide to personal transformation" border="0">
+    </a>
+    </div>
+    <div class="ebook-right">
+    <div class="ebook-right-inner">
+    <div id="share-buttons">
+    <div class="addthis_inline_share_toolbox"></div>
+    </div>
+    <h1 class="ebook-title " itemprop="name">{{rooms.topic.name}}</h1>
+    <div class="ebook-file-info">
+    <span class="info-green">258 Pages</span> <span class="m-info">·</span> <span class="info-green">{{rooms.created|timesince}}</span> <span class="m-info">·</span>
+    <span class="info-green">2.74 MB</span> <span class="m-info">·</span>
+    </div>
+    <div class="ebook-author">
+    by <a href="/search?q=David+Sargent" rel="nofollow" class="card-author"><span itemprop="creator">{{rooms.name}}</span></a>
+    </div>
+    <div class="ebook-author"><span>Rate:{{rooms.rate}}</span></div>
+    <div class="ebook-tags"><i class="fa fa-plus fa-plus-fix mr-1" aria-hidden="true"></i><a href="">Self-improvement</a> <i class="fa fa-plus fa-plus-fix ml-2 mr-1" aria-hidden="true" style="margin-left:6px;"></i> <a href="/category/113" onclick="ga('send', 'event', 'CategoryLink', 'EbookInfo');">Editor's Picks</a> <i class="fa fa-plus fa-plus-fix ml-2 mr-1" aria-hidden="true" style="margin-left:6px;"></i> <a href="/category/112" onclick="ga('send', 'event', 'CategoryLink', 'EbookInfo');">Most Popular</a></div> </div>
+    </div>
+    
+    <div class="ebook-buttons">
+        <button data-product="{{rooms.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+        <button type="button" id="previewButtonMain" class="btn btn-warning btn-responsive" data-id="10172273" data-preview="/ebook/preview?id=10172273&amp;session=84f0f3490acb0a861ce0cf97be914eed" data-download-page="/living-in-the-light-a-guide-to-personal-transformation-d10172273.html" style="font-weight:500;">
+    Preview </button>
+    <span id="download-button"><a id="download-button-link" class="btn btn-primary btn-responsive" href="/living-in-the-light-a-guide-to-personal-transformation-d10172273.html" rel="nofollow" onclick="c();ga('send', 'event', 'Download', 'ebook-page');setCookie('disablePopup', 1, 1);" role="button" style="font-weight:500;">Download</a></span>
+    </div>
+    </div>
+    <div class="quotes">{{rooms.description}} ― <strong>{{rooms.name}}</strong></div>
+    <div id="sf"></div>
+    <div class="mb-3 mt-3" id="similar-files">
+    Similar <span class="hidemobile">Book by {{rooms.name}}</span> <div style="float:right;">
+    <select class="select-style" tabindex="9">
+    <option value="">Filter by page count</option>
+    <option value="1-24">1-24 Pages</option>
+    <option value="25-50">25-50 Pages</option>
+    <option value="51-100">51-100 Pages</option>
+    <option value="100-*">100+ Pages</option>
+    </select>
+    </div>
+    </div>
+  {% for rooms in similarnote%}
+    <div id="similar">
+    <div class="files-new">
+    <ul>
+    <li><div class="row"> <div class="col-sm ">
+    <div class="file-left">
+    <a href="/give-and-take-why-helping-others-drives-our-success-e58864799.html" data-id="58864799">
+    <img class="img-zoom file-img" src="https://cdn.asaha.com/assets/thumbs/653/653f249a58f438ef343c5da5f023203d-s.jpg" data-original="https://cdn.asaha.com/assets/thumbs/653/653f249a58f438ef343c5da5f023203d-s.jpg" alt="Give and Take: WHY HELPING OTHERS DRIVES OUR SUCCESS" title="Give and Take: WHY HELPING OTHERS DRIVES OUR SUCCESS" loading="lazy">
+    </a>
+    </div>
+    <div class="file-right">
+    <a href= "" data-loc="1" data-from="10172273" data-to="58864799" class="ai-similar">
+    <h2>{{rooms.topic.name}}</h2>
+    </a>
+    <div class="file-info" data-id="58864799"> <span class="fi-pagecount ">260 Pages</span><span class="ml-1 mr-1">·</span><span class="fi-year ">{{rooms.created|timesince}}</span><span class="ml-1 mr-1">·</span><span class="fi-size hidemobile">1.57 MB</span> <br>
+    </div>
+    {{rooms.description}}
+    </div>
+    </div>
+    </div> </li>
+    
+  
+    
+    </ul>
+    </div>
+    {%endfor%}
+    <div class="loadmore">
+    <div class="moreButton" id="moreButton">
+    <i class="fa fa-chevron-circle-down" aria-hidden="true" style="color: #2d96c3; margin-right: 8px;"></i> Load more similar PDF files </div>
+    </div>
+    </div>
+             
+       <div>
+
+        
+       </div>
+
+    </div>
+          </div>
+    <div>
+
+    </div>
+    
+</body>
+<script  src="{%static 'js/carts.js'%}"></script>
+
+    </html>
+
+
+    {%endblock content%}
+

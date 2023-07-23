@@ -1,0 +1,35 @@
+{% include 'navbar.html' %}
+{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteTrove</title>
+</head>
+<style>
+    .room-container{
+        display: grid;
+        grid-template-columns: 1fr 3fr 1fr ;
+    }
+</style>
+<body>
+    <div class="room-container">
+        <div>
+        {% include 'subjects_section.html' %}
+        </div>
+
+        <div>
+        {% include 'book_section.html' %}
+        </div>
+
+        <div>
+        
+        </div>
+
+        
+    </div>
+</body>
+</html>
+{% endblock content %}
